@@ -89,8 +89,10 @@ public class TiendaController extends HttpServlet {
 	}
 
 
-	private void showNewForm(HttpServletRequest request, HttpServletResponse response) {
+	private void showNewForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		request.getRequestDispatcher("registro.jsp").forward(request, response);
 		
 	}
 
