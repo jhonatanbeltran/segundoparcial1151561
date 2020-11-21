@@ -7,12 +7,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.ufps.Dao.ClienteDao;
+
+
 /**
  * Servlet implementation class ClienteController
  */
 @WebServlet("/Cliente")
 public class ClienteController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	ClienteDao clienteDao= new ClienteDao();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -62,8 +66,10 @@ public class ClienteController extends HttpServlet {
 		
 	}
 
-	private void index(HttpServletRequest request, HttpServletResponse response) {
+	private void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.getRequestDispatcher("index.jsp").forward(request, response);
+
 		
 	}
 
