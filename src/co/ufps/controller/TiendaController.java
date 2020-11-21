@@ -60,7 +60,7 @@ public class TiendaController extends HttpServlet {
 		
 	}
 
-	private void insertarTienda(HttpServletRequest request, HttpServletResponse response) {
+	private void insertarTienda(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		Tienda tienda = new Tienda();
 		tienda.setNombre(request.getParameter("inputNombre"));
@@ -75,7 +75,7 @@ public class TiendaController extends HttpServlet {
 		tiendaDao.insert(tienda);
 		List <Tienda> listaTiendas = tiendaDao.list();
 		request.getSession().setAttribute("listaHeroes", listaTiendas);	
-		//request.getRequestDispatcher("").forward(request, response);
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 		
 		
 		
